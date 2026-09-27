@@ -93,6 +93,29 @@
       margin-top: 0;
       margin-bottom: 20px;
     }
+
+    .diary-window {
+      width: 500px;
+      margin-top: 20px;
+    }
+
+    .diary-content {
+      background-color: #ffffff;
+      font-family: "MS Gothic", "ＭＳ ゴシック", monospace;
+      line-height: 1.7;
+    }
+
+    .diary-date {
+      font-weight: bold;
+      color: #000080;
+      margin-bottom: 5px;
+    }
+
+    .diary-content hr {
+      border: 0;
+      border-top: 1px dashed #808080;
+      margin: 18px 0;
+    }
   
   </style>
 </head>
@@ -119,6 +142,32 @@
       </ul>
     </div>
   </div>
+
+  <div class="window diary-window">
+  <div class="title-bar">
+    <span>日記.txt - メモ帳</span>
+
+    <div class="title-buttons">
+      <div class="title-button">―</div>
+      <div class="title-button">□</div>
+      <div class="title-button">×</div>
+    </div>
+  </div>
+
+  <div class="window-content diary-content">
+
+    <p class="diary-date">2026/09/28</p>
+
+    <p>
+      ホームページ作った！！<br>
+    </p>
+
+    <hr>
+
+    <p class="diary-date">2026/09/27</p>
+
+  </div>
+</div>
 
 </body>
 
