@@ -7,27 +7,78 @@
 
   <style>
     body {
-      background-color: #d4d0c8;
+      background-color: #c0c0c0;
       font-family: "MS PGothic", "ＭＳ Ｐゴシック", sans-serif;
+      padding: 20px;
+      color: black;
     }
 
-    .links {
-      width: 300px;
+    h1 {
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+
+    .window {
+      width: 320px;
+      background-color: #c0c0c0;
+      border-top: 2px solid #ffffff;
+      border-left: 2px solid #ffffff;
+      border-right: 2px solid #404040;
+      border-bottom: 2px solid #404040;
+      box-shadow: 1px 1px 0 #000000;
+    }
+
+    .title-bar {
+      background: linear-gradient(to right, #000080, #1084d0);
+      color: white;
+      font-weight: bold;
+      font-size: 14px;
+      padding: 3px 6px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .title-buttons {
+      display: flex;
+      gap: 2px;
+    }
+
+    .title-button {
+      width: 16px;
+      height: 14px;
+      background-color: #c0c0c0;
+      border-top: 1px solid #ffffff;
+      border-left: 1px solid #ffffff;
+      border-right: 1px solid #404040;
+      border-bottom: 1px solid #404040;
+      font-size: 10px;
+      line-height: 12px;
+      text-align: center;
+      color: black;
+    }
+
+    .window-content {
       padding: 12px;
-      background-color: #ffffff;
-      border: 2px solid #808080;
+      background-color: #c0c0c0;
+      border-top: 2px solid #808080;
     }
 
-    .links h2 {
-      margin-top: 0;
-    }
-
-    .links ul {
+    .window-content ul {
+      margin: 0;
       padding-left: 20px;
     }
 
-    .links a {
-      color: blue;
+    .window-content li {
+      margin-bottom: 8px;
+    }
+
+    .window-content a {
+      color: #0000ee;
+    }
+
+    .window-content a:visited {
+      color: #551a8b;
     }
   </style>
 </head>
@@ -36,13 +87,22 @@
 
   <h1>ぽぽのホームページ</h1>
 
-  <div class="links">
-    <h2>リンク集</h2>
+  <div class="window">
+    <div class="title-bar">
+      <span>リンク集</span>
+      <div class="title-buttons">
+        <div class="title-button">―</div>
+        <div class="title-button">□</div>
+        <div class="title-button">×</div>
+      </div>
+    </div>
 
-    <ul>
-      <li><a href="https://x.com/ppboy0s" target="_blank">X</a></li>
-      <li><a href="https://www.twitch.tv/ppboy0s" target="_blank">Twitch</a></li>
-    </ul>
+    <div class="window-content">
+      <ul>
+        <li><a href="https://x.com/ppboy0s" target="_blank">X</a></li>
+        <li><a href="https://www.twitch.tv/ppboy0s" target="_blank">Twitch</a></li>
+      </ul>
+    </div>
   </div>
 
 </body>
