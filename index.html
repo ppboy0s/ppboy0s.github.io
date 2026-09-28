@@ -1,48 +1,87 @@
 <!DOCTYPE html>
 <html lang="ja">
 
-<link rel="stylesheet" href="css/style.css">
+<head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
   <title>ぽぽのホームページ</title>
+
+  <link rel="stylesheet" href="css/style.css">
 </head>
-  <h1>★★ ぽぽのホームページ ★★</h1>
+
+
+<body>
+
+  <h1>
+    ★★ ぽぽのホームページ ★★
+  </h1>
+
 
   <p class="subtitle">
     ~popo's homepage~
   </p>
 
+
   <!-- ===== 流れる文字 ===== -->
+
   <div class="marquee-box">
+
     <marquee scrollamount="4">
       ★ ゆっくりしていってね！ ★
     </marquee>
+
   </div>
+
+
+  <!-- ===== ウィンドウ ===== -->
 
   <div class="window-layout">
 
     <div class="left-column">
+
       <div id="photo-component"></div>
+
       <div id="links-component"></div>
+
     </div>
 
+
     <div class="right-column">
+
       <div id="diary-component"></div>
+
     </div>
 
   </div>
 
+
   <!-- ===== フッター ===== -->
+
   <footer class="footer">
     <p>Since 2026.09.28</p>
   </footer>
 
+
+  <!-- ===== データ ===== -->
+
   <script src="data/diary-data.js"></script>
+  <script src="data/photo-data.js"></script>
+
+
+  <!-- ===== JavaScript ===== -->
+
   <script src="js/window.js"></script>
   <script src="js/diary.js"></script>
-  <script src="js/components.js"></script>
-  <script src="data/photo-data.js"></script>
   <script src="js/photo.js"></script>
 
+  <!-- 最後に読み込む -->
+  <script src="js/components.js"></script>
+
 </body>
+
 </html>
