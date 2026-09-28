@@ -1,144 +1,240 @@
 /* =========================
    共通カラー・サイズ
 ========================= */
+
 :root {
   --win-gray: #c0c0c0;
   --win-blue: #000080;
   --win-blue-light: #1084d0;
+
   --win-white: #ffffff;
   --win-dark: #404040;
   --win-mid: #808080;
+
   --text-black: #000000;
   --text-purple: #800080;
   --text-gray: #666666;
   --text-gray-light: #555555;
+
+  /* PCでのウィンドウ横幅 */
   --window-width: 500px;
+
   --font-main:
     "MS PGothic",
     "ＭＳ Ｐゴシック",
     sans-serif;
 }
 
+
 /* =========================
    全体
 ========================= */
+
 body {
   background-color: var(--win-gray);
+
   font-family: var(--font-main);
   color: var(--text-black);
+
   text-align: center;
+
+  margin: 0;
+
   padding: 20px;
   padding-bottom: 50px;
 }
 
+
+/* =========================
+   ページタイトル
+========================= */
+
 h1 {
+  margin-top: 10px;
   margin-bottom: 8px;
+
   font-family: var(--font-main);
   font-size: 36px;
   letter-spacing: 3px;
+
   color: var(--win-blue);
+
   text-align: center;
 }
+
 
 /* =========================
    サブタイトル
 ========================= */
+
 .subtitle {
   margin-top: 0;
   margin-bottom: 20px;
+
   color: var(--text-purple);
+
   font-size: 14px;
   font-weight: bold;
+
   text-align: center;
 }
+
 
 /* =========================
    共通ウィンドウ
 ========================= */
+
 .window {
-  width: var(--window-width);
-  margin: 0;
+  width: 100%;
+
   background-color: var(--win-gray);
+
   border-top: 2px solid var(--win-white);
   border-left: 2px solid var(--win-white);
   border-right: 2px solid var(--win-dark);
   border-bottom: 2px solid var(--win-dark);
+
   box-shadow: 1px 1px 0 var(--text-black);
+
+  box-sizing: border-box;
+
   text-align: left;
 }
 
+
+/* =========================
+   PC用 2列レイアウト
+
+   左側：
+   時計
+   写真
+   リンク集
+
+   右側：
+   日記
+
+   左列全体の高さに
+   右の日記を自動で合わせる
+========================= */
+
 .window-layout {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
+  display: grid;
+
+  grid-template-columns:
+    var(--window-width)
+    var(--window-width);
+
   gap: 20px;
+
+  justify-content: center;
+
+  /* 左右を同じ高さにする */
+  align-items: stretch;
 }
 
-.left-column,
-.right-column {
-  width: 500px;
-}
+
+/* =========================
+   左側の列
+========================= */
 
 .left-column {
+  width: var(--window-width);
+
   display: flex;
   flex-direction: column;
+
   gap: 20px;
 }
+
+
+/* =========================
+   右側の列
+========================= */
+
+.right-column {
+  width: var(--window-width);
+  min-width: var(--window-width);
+  max-width: var(--window-width);
+
+  display: flex;
+}
+
 
 /* =========================
    タイトルバー
 ========================= */
+
 .title-bar {
   display: flex;
+
   align-items: center;
   justify-content: space-between;
+
   padding: 3px 6px;
+
   background:
     linear-gradient(
       to right,
       var(--win-blue),
       var(--win-blue-light)
     );
+
   color: var(--win-white);
+
   font-size: 14px;
   font-weight: bold;
 }
 
+
 /* =========================
    タイトルバーのボタン
 ========================= */
+
 .title-buttons {
   display: flex;
+
   gap: 2px;
 }
 
 .title-button {
   width: 16px;
   height: 14px;
+
   background-color: var(--win-gray);
+
   border-top: 1px solid var(--win-white);
   border-left: 1px solid var(--win-white);
   border-right: 1px solid var(--win-dark);
   border-bottom: 1px solid var(--win-dark);
+
   color: var(--text-black);
+
   font-size: 10px;
   line-height: 12px;
+
   text-align: center;
 }
+
 
 /* =========================
    ウィンドウ内部
 ========================= */
+
 .window-content {
   padding: 12px;
+
   background-color: var(--win-white);
+
   border-top: 2px solid var(--win-mid);
+
   box-sizing: border-box;
+
   overflow: auto;
 }
 
 .window-content ul {
   margin: 0;
+
   padding-left: 20px;
 }
 
@@ -146,111 +242,110 @@ h1 {
   margin-bottom: 8px;
 }
 
+
 /* =========================
    流れる文字
 ========================= */
+
 .marquee-box {
   width: var(--window-width);
+
   margin: 0 auto 20px auto;
+
   padding: 4px;
+
   background-color: var(--win-white);
+
   border-top: 2px solid var(--win-mid);
   border-left: 2px solid var(--win-mid);
   border-right: 2px solid var(--win-white);
   border-bottom: 2px solid var(--win-white);
+
   box-sizing: border-box;
 }
 
-/* =========================
-   リンク集
-========================= */
-.links-window .window-content {
-  max-height: 150px;
-}
 
 /* =========================
-   日記
+   時計
 ========================= */
-.diary-window .window-content {
-  height: 500px;
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
+
+.clock-window {
+  width: 100%;
 }
 
-.diary-scroll {
-  flex: 1;
-  overflow-y: auto;
-  padding-right: 4px;
+/* =========================
+   時計
+========================= */
+
+.clock-window {
+  width: 100%;
 }
 
-.diary-nav {
-  flex-shrink: 0;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 10px;
-  margin-top: 10px;
-  padding-top: 8px;
-  border-top: 1px solid var(--win-mid);
-}
+.clock-content {
+  padding: 12px;
 
-/* 日付 */
-.diary-date {
-  margin-top: 0;
-  margin-bottom: 4px;
-  color: var(--win-blue);
-  font-weight: bold;
-}
+  text-align: center;
 
-/* 投稿 */
-.diary-post {
-  margin-bottom: 18px;
-}
-
-.diary-post p {
-  margin-top: 0;
-  margin-bottom: 10px;
-  white-space: pre-line;
-}
-
-.diary-post-time {
-  color: var(--text-gray);
-  font-size: 12px;
-}
-
-/* 日記ページ送り */
-.diary-nav {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 10px;
-  margin-top: 10px;
-}
-
-.diary-nav button {
-  padding: 4px 10px;
   background-color: var(--win-gray);
-  border-top: 2px solid var(--win-white);
-  border-left: 2px solid var(--win-white);
-  border-right: 2px solid var(--win-dark);
-  border-bottom: 2px solid var(--win-dark);
-  font-family: var(--font-main);
-  cursor: pointer;
 }
 
-.diary-nav button:active {
+
+/* 時計表示部分 */
+#clock-time {
+  width: 220px;
+
+  margin: 0 auto;
+
+  padding: 8px 12px;
+
+  background-color: #d4d0c8;
+
   border-top: 2px solid var(--win-dark);
   border-left: 2px solid var(--win-dark);
   border-right: 2px solid var(--win-white);
   border-bottom: 2px solid var(--win-white);
+
+  box-sizing: border-box;
+
+  color: #000000;
+
+  font-family:
+    "Courier New",
+    monospace;
+
+  font-size: 30px;
+  font-weight: bold;
+
+  letter-spacing: 2px;
 }
+
+
+/* 日付 */
+#clock-date {
+  margin-top: 7px;
+
+  color: var(--win-dark);
+
+  font-family:
+    "MS PGothic",
+    "ＭＳ Ｐゴシック",
+    sans-serif;
+
+  font-size: 12px;
+}
+
 
 /* =========================
    写真ウィンドウ
 ========================= */
+
+.photo-window {
+  width: 100%;
+}
+
 .photo-window .window-content {
   height: 260px;
+
   overflow-y: auto;
 }
 
@@ -258,155 +353,479 @@ h1 {
   padding: 6px;
 }
 
+
 /* =========================
    写真サムネイル一覧
 ========================= */
+
 .photo-grid {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+
+  /* PCでは横5枚 */
+  grid-template-columns:
+    repeat(5, 1fr);
+
   gap: 4px;
 }
 
 .photo-thumb {
   aspect-ratio: 1 / 1;
+
   overflow: hidden;
+
   border: 1px solid var(--win-mid);
+
   box-sizing: border-box;
+
   cursor: pointer;
 }
 
 .photo-thumb img {
   display: block;
+
   width: 100%;
   height: 100%;
+
   object-fit: cover;
 }
+
 
 /* =========================
    写真モーダル
 ========================= */
+
 .photo-modal {
   display: none;
+
   position: fixed;
+
   top: 0;
   left: 0;
+
   width: 100vw;
   height: 100vh;
+
   background-color:
     rgba(0, 0, 0, 0.7);
+
   align-items: center;
   justify-content: center;
+
   z-index: 10000;
 }
+
 
 /* モーダル表示時 */
 .photo-modal.show {
   display: flex;
 }
 
+
 /* モーダル本体 */
 .photo-modal-box {
   position: relative;
+
   max-width: 80vw;
   max-height: 85vh;
+
   padding: 10px;
+
   background-color: var(--win-gray);
+
   border-top: 2px solid var(--win-white);
   border-left: 2px solid var(--win-white);
   border-right: 2px solid var(--win-dark);
   border-bottom: 2px solid var(--win-dark);
-  box-shadow: 2px 2px 0 var(--text-black);
+
+  box-shadow:
+    2px 2px 0 var(--text-black);
+
   text-align: center;
 }
+
 
 /* 拡大写真 */
 .photo-modal-box img {
   display: block;
+
   max-width: 75vw;
   max-height: 70vh;
+
   width: auto;
   height: auto;
+
   margin: 0 auto;
+
   object-fit: contain;
 }
+
 
 /* 写真タイトル */
 .photo-title {
   margin: 8px 0 0 0;
+
   color: var(--win-blue);
+
   font-size: 13px;
   font-weight: bold;
 }
 
+
 /* 写真説明 */
 .photo-caption {
   margin: 4px 0 0 0;
+
   color: var(--text-gray-light);
+
   font-size: 12px;
 }
+
+
+/* =========================
+   リンク集
+========================= */
+
+.links-window {
+  width: 100%;
+}
+
+.links-window .window-content {
+  max-height: 150px;
+}
+
+
+/* =========================
+   日記ウィンドウ
+
+   内容量に関係なく
+   横幅は500px固定
+========================= */
+
+.diary-window {
+  width: var(--window-width);
+  min-width: var(--window-width);
+  max-width: var(--window-width);
+
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  box-sizing: border-box;
+}
+
+/* =========================
+   日記ウィンドウ内部
+
+   タイトルバーを除いた残りを
+   全部使用する
+========================= */
+
+.diary-window .window-content {
+  flex: 1;
+
+  min-height: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  overflow: hidden;
+}
+
+
+/* =========================
+   日記本文
+
+   ここだけスクロールする
+========================= */
+
+.diary-scroll {
+  flex: 1;
+
+  min-height: 0;
+
+  padding-right: 4px;
+
+  overflow-y: auto;
+}
+
+
+/* =========================
+   日付
+========================= */
+
+.diary-date {
+  margin-top: 0;
+  margin-bottom: 4px;
+
+  color: var(--win-blue);
+
+  font-weight: bold;
+}
+
+
+/* =========================
+   日記投稿
+========================= */
+
+.diary-post {
+  margin-bottom: 18px;
+}
+
+.diary-post p {
+  margin-top: 0;
+  margin-bottom: 10px;
+
+  white-space: pre-line;
+}
+
+.diary-post-time {
+  color: var(--text-gray);
+
+  font-size: 12px;
+}
+
+
+/* =========================
+   日記ページ送り
+
+   ← 前の日へ
+   日付
+   次の日へ →
+
+   この部分はスクロールしない
+========================= */
+
+.diary-nav {
+  flex-shrink: 0;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 10px;
+
+  margin-top: 10px;
+
+  padding-top: 8px;
+
+  border-top:
+    1px solid var(--win-mid);
+}
+
+
+/* =========================
+   日記ページ送りボタン
+========================= */
+
+.diary-nav button {
+  padding: 4px 10px;
+
+  background-color: var(--win-gray);
+
+  border-top: 2px solid var(--win-white);
+  border-left: 2px solid var(--win-white);
+  border-right: 2px solid var(--win-dark);
+  border-bottom: 2px solid var(--win-dark);
+
+  font-family: var(--font-main);
+
+  cursor: pointer;
+}
+
+
+/* ボタンを押した時 */
+.diary-nav button:active {
+  border-top: 2px solid var(--win-dark);
+  border-left: 2px solid var(--win-dark);
+  border-right: 2px solid var(--win-white);
+  border-bottom: 2px solid var(--win-white);
+}
+
 
 /* =========================
    フッター
 ========================= */
+
 .footer {
   position: fixed;
+
   left: 0;
   bottom: 0;
+
   width: 100%;
+
   padding: 8px 0;
+
   background-color: var(--win-gray);
+
   color: var(--win-dark);
+
   font-size: 12px;
+
   text-align: center;
+
   z-index: 9999;
 }
 
+
 /* =========================
    スマホ表示
+
+   PCの2列表示を解除して、
+   時計 → 写真 → リンク集 → 日記
+   の1列表示にする
 ========================= */
+
 @media (max-width: 700px) {
 
-    body {
+  /* =========================
+     スマホ：全体
+  ========================= */
+
+  body {
     padding: 10px;
-    padding-bottom: 90px;
-    }
+    padding-bottom: 30px;
+  }
 
-    h1 {
+
+  /* =========================
+     スマホ：タイトル
+  ========================= */
+
+  h1 {
     font-size: 24px;
-    }
 
-    .window-layout {
+    letter-spacing: 1px;
+  }
+
+
+  /* =========================
+     スマホ：流れる文字
+  ========================= */
+
+  .marquee-box {
+    width: 100%;
+    max-width: var(--window-width);
+
+    box-sizing: border-box;
+  }
+
+
+  /* =========================
+     スマホ：1列表示
+  ========================= */
+
+  .window-layout {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 20px;
+
+    width: 100%;
+  }
+
+
+  /* =========================
+     スマホ：左右の列
+
+     PC用の500px固定を解除
+  ========================= */
+
+  .left-column,
+  .right-column {
+    width: 100%;
+    max-width: var(--window-width);
+
+    height: auto;
+  }
+
+
+  /* =========================
+     スマホ：左側
+  ========================= */
+
+  .left-column {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 20px;
+  }
+
+
+  /* =========================
+     スマホ：共通ウィンドウ
+  ========================= */
+
+  .window {
+    width: 100%;
+
+    max-width: var(--window-width);
+
+    box-sizing: border-box;
+  }
+
+
+  /* =========================
+     スマホ：日記
+
+     PCでは左右の高さを合わせるが、
+     スマホでは高さ合わせを解除する
+  ========================= */
+
+  .diary-window {
+    height: auto;
+  }
+
+
+  /* =========================
+     スマホ：日記内部
+
+     スマホでは日記本文部分に
+     500pxの高さを設定
+  ========================= */
+
+  .diary-window .window-content {
+    height: 500px;
+
+    flex: none;
+
     display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: 20px;
-    width: 100%;
-    }
 
-    .left-column,
-    .right-column {
-    width: 100%;
-    }
+    overflow: hidden;
+  }
 
-    .window {
-    width: 100%;
-    max-width: 500px;
-    box-sizing: border-box;
-    }
 
-    .marquee-box {
-    width: 100%;
-    max-width: 500px;
-    box-sizing: border-box;
-    }
+  /* =========================
+     スマホ：写真
 
-    .photo-grid {
+     PCでは横5枚、
+     スマホでは横3枚
+  ========================= */
+
+  .photo-grid {
     grid-template-columns:
-        repeat(3, 1fr);
-    }
+      repeat(3, 1fr);
+  }
 
-    .footer {
+
+  /* =========================
+     スマホ：フッター
+
+     画面下固定を解除して、
+     ページの最後に普通に表示する
+  ========================= */
+
+  .footer {
     position: static;
-    }
+
+    margin-top: 20px;
+  }
 
 }

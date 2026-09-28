@@ -22,14 +22,21 @@ async function loadComponents() {
 
     // 写真を読み込む
     await loadComponent(
-    "photo-component",
-    "components/photo.html"
-  );
+      "photo-component",
+      "components/photo.html"
+    );
+
+    // 時計を読み込む
+    await loadComponent(
+      "clock-component",
+      "components/clock.html"
+    );
 
     // HTMLを全部読み込んだ後に実行
     initWindows();
     initDiary();
     initPhoto();
+    initClock();
 }
 
 loadComponents();
