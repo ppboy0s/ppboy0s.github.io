@@ -12,22 +12,28 @@ async function loadComponent(id, file) {
 
 async function loadComponents() {
 
-  // リンク集を読み込む
-  await loadComponent(
-    "links-component",
-    "components/links.html"
+    // リンク集を読み込む
+    await loadComponent(
+        "links-component",
+        "components/links.html"
+    );
+
+    // 日記を読み込む
+    await loadComponent(
+        "diary-component",
+        "components/diary.html"
+    );
+
+    // 写真を読み込む
+    await loadComponent(
+    "photo-component",
+    "components/photo.html"
   );
 
-  // 日記を読み込む
-  await loadComponent(
-    "diary-component",
-    "components/diary.html"
-  );
-
-  // HTMLを全部読み込んだ後に実行
-  initWindows();
-
-  initDiary();
+    // HTMLを全部読み込んだ後に実行
+    initWindows();
+    initDiary();
+    initPhoto();
 }
 
 loadComponents();

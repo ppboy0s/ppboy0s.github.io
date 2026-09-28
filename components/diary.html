@@ -1,18 +1,23 @@
-  <!-- ===== 日記ウィンドウ ===== -->
-  <div class="window diary-window">
+<div class="window diary-window">
 
-    <div class="title-bar">
-      <span>日記.txt</span>
-    </div>
-
-    <div class="window-content diary-content">
-      <div id="diary-area"></div>
-      <hr>
-      <div class="diary-nav">
-        <button id="prev-day">← 前の日へ</button>
-        <span id="current-date"></span>
-        <button id="next-day">次の日へ →</button>
-      </div>
-
-    </div>
+  <div class="title-bar">
+    <span>日記.txt - メモ帳</span>
   </div>
+
+  <div class="window-content diary-content">
+
+    <!-- ここだけスクロール -->
+    <div class="diary-scroll">
+      <div id="diary-area"></div>
+    </div>
+
+    <!-- ここは固定 -->
+    <div class="diary-nav">
+      <button id="prev-day">← 前の日へ</button>
+      <span id="current-date"></span>
+      <button id="next-day">次の日へ →</button>
+    </div>
+
+  </div>
+
+</div>
