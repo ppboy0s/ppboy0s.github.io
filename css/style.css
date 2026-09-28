@@ -494,18 +494,18 @@ h1 {
 
 @media (max-width: 700px) {
 
-  body {
+    body {
     padding: 10px;
     padding-bottom: 90px;
-  }
+    }
 
 
-  h1 {
+    h1 {
     font-size: 24px;
-  }
+    }
 
 
-  .window-layout {
+    .window-layout {
     display: flex;
 
     flex-direction: column;
@@ -515,36 +515,40 @@ h1 {
     gap: 20px;
 
     width: 100%;
-  }
+    }
 
 
-  .left-column,
-  .right-column {
+    .left-column,
+    .right-column {
     width: 100%;
-  }
+    }
 
 
-  .window {
-    width: 100%;
-
-    max-width: 500px;
-
-    box-sizing: border-box;
-  }
-
-
-  .marquee-box {
+    .window {
     width: 100%;
 
     max-width: 500px;
 
     box-sizing: border-box;
-  }
+    }
 
 
-  .photo-grid {
+    .marquee-box {
+    width: 100%;
+
+    max-width: 500px;
+
+    box-sizing: border-box;
+    }
+
+
+    .photo-grid {
     grid-template-columns:
-      repeat(3, 1fr);
-  }
+        repeat(3, 1fr);
+    }
+
+    .footer {
+    position: static;
+    }
 
 }
