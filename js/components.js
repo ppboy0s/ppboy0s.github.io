@@ -24,12 +24,10 @@ async function loadComponents() {
     "components/diary.html"
   );
 
-
   // HTMLを全部読み込んだ後に実行
   initWindows();
 
   initDiary();
 }
-
 
 loadComponents();

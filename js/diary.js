@@ -10,16 +10,15 @@ function initDiary() {
   const nextButton = document.getElementById("next-day");
 
   function showDiary() {
+
     const date = diaryDates[currentDiaryIndex];
 
     currentDate.textContent = date;
-
     diaryArea.innerHTML = `
       <p class="diary-date">${date}</p>
     `;
 
     diaryData[date].forEach(post => {
-
       diaryArea.innerHTML += `
         <div class="diary-post">
 
@@ -33,36 +32,27 @@ function initDiary() {
 
         </div>
       `;
-
     });
 
     prevButton.disabled =
       currentDiaryIndex === 0;
-
     nextButton.disabled =
       currentDiaryIndex === diaryDates.length - 1;
   }
 
-
   prevButton.addEventListener("click", () => {
-
     if (currentDiaryIndex > 0) {
       currentDiaryIndex--;
       showDiary();
     }
-
   });
 
-
   nextButton.addEventListener("click", () => {
-
     if (currentDiaryIndex < diaryDates.length - 1) {
       currentDiaryIndex++;
       showDiary();
     }
-
   });
-
 
   showDiary();
 }
