@@ -16,10 +16,7 @@
   --text-gray: #666666;
   --text-gray-light: #555555;
 
-  /* PCでの1列の横幅 */
   --window-width: 500px;
-
-  /* ウィンドウ同士の間隔 */
   --window-gap: 20px;
 
   --font-main:
@@ -60,6 +57,7 @@ h1 {
   color: var(--win-blue);
 
   font-family: var(--font-main);
+
   font-size: 36px;
 
   letter-spacing: 3px;
@@ -108,88 +106,35 @@ h1 {
 
 
 /* =========================
-   メインの枠組み
-
-   先にマス目の大きさを決めて、
-   その中へウィンドウを配置する
-
-   ┌────────┬────────┐
-   │ 時計    │カウンター│
-   ├────────┼────────┤
-   │ 写真    │        │
-   │         │ 日記   │
-   ├────────┤        │
-   │リンク集 │        │
-   └────────┴────────┘
+   2列レイアウト
 ========================= */
 
-.dashboard {
-  display: grid;
-
-  grid-template-columns:
-    var(--window-width)
-    var(--window-width);
-
-  grid-template-rows:
-    120px
-    300px
-    110px;
-
-  grid-template-areas:
-    "clock   counter"
-    "photo   diary"
-    "links   diary";
-
-  gap: var(--window-gap);
+.window-layout {
+  display: flex;
 
   justify-content: center;
+  align-items: flex-start;
+
+  gap: var(--window-gap);
 }
 
 
 /* =========================
-   各ウィンドウの置き場所
+   左右の列
+
+   各列の中に、
+   HTMLに書いた順番で
+   ウィンドウが縦に並ぶ
 ========================= */
 
-.slot-clock {
-  grid-area: clock;
-}
+.left-column,
+.right-column {
+  width: var(--window-width);
 
-.slot-counter {
-  grid-area: counter;
-}
+  display: flex;
+  flex-direction: column;
 
-.slot-photo {
-  grid-area: photo;
-}
-
-.slot-diary {
-  grid-area: diary;
-}
-
-.slot-links {
-  grid-area: links;
-}
-
-
-/* =========================
-   各マスをいっぱいに使う
-========================= */
-
-.slot {
-  width: 100%;
-  height: 100%;
-
-  min-width: 0;
-  min-height: 0;
-}
-
-.slot > .window,
-.slot > div,
-.slot > div > .window {
-  width: 100%;
-  height: 100%;
-
-  box-sizing: border-box;
+  gap: var(--window-gap);
 }
 
 
@@ -198,8 +143,7 @@ h1 {
 ========================= */
 
 .window {
-  width: 100%;
-  height: 100%;
+  width: var(--window-width);
 
   background-color: var(--win-gray);
 
@@ -305,6 +249,9 @@ h1 {
 ========================= */
 
 .clock-window {
+  width: var(--window-width);
+  height: 120px;
+
   display: flex;
   flex-direction: column;
 }
@@ -314,6 +261,7 @@ h1 {
 
   display: flex;
   flex-direction: column;
+
   align-items: center;
   justify-content: center;
 
@@ -323,7 +271,6 @@ h1 {
 
   text-align: center;
 
-  /* スクロールバーを出さない */
   overflow: hidden;
 }
 
@@ -371,6 +318,9 @@ h1 {
 ========================= */
 
 .counter-window {
+  width: var(--window-width);
+  height: 120px;
+
   display: flex;
   flex-direction: column;
 }
@@ -386,6 +336,8 @@ h1 {
   padding: 14px;
 
   text-align: center;
+
+  overflow: hidden;
 }
 
 #visitor-count {
@@ -414,6 +366,9 @@ h1 {
 ========================= */
 
 .photo-window {
+  width: var(--window-width);
+  height: 300px;
+
   display: flex;
   flex-direction: column;
 }
@@ -438,7 +393,6 @@ h1 {
 .photo-grid {
   display: grid;
 
-  /* PCでは横5枚 */
   grid-template-columns:
     repeat(5, 1fr);
 
@@ -563,10 +517,11 @@ h1 {
 ========================= */
 
 .links-window {
+  width: var(--window-width);
+  height: 110px;
+
   display: flex;
   flex-direction: column;
-
-  height: 100%;
 }
 
 .links-window .window-content {
@@ -585,10 +540,13 @@ h1 {
 ========================= */
 
 .diary-window {
+  width: var(--window-width);
+  height: 450px;
+
   display: flex;
   flex-direction: column;
 
-  min-width: 0;
+  box-sizing: border-box;
 }
 
 
@@ -751,8 +709,8 @@ h1 {
 /* =========================
    スマホ表示
 
-   PCのマス目を解除して
-   1列表示にする
+   PCでは2列、
+   スマホでは1列にする
 ========================= */
 
 @media (max-width: 700px) {
@@ -790,53 +748,36 @@ h1 {
 
 
   /* =========================
-     スマホ：ウィンドウ配置
-
-     時計
-     カウンター
-     写真
-     日記
-     リンク集
-
-     の順で縦に並べる
+     スマホ：1列表示
   ========================= */
 
-  .dashboard {
-    display: flex;
-
+  .window-layout {
     flex-direction: column;
-
-    gap: 20px;
-
-    width: 100%;
 
     align-items: center;
   }
 
 
   /* =========================
-     スマホ：各枠
+     スマホ：左右の列
   ========================= */
 
-  .slot {
+  .left-column,
+  .right-column {
     width: 100%;
 
     max-width: var(--window-width);
-
-    height: auto;
   }
 
 
   /* =========================
-     スマホ：各ウィンドウ
+     スマホ：共通ウィンドウ
   ========================= */
 
-  .slot > .window,
-  .slot > div,
-  .slot > div > .window {
+  .window {
     width: 100%;
 
-    height: auto;
+    max-width: var(--window-width);
   }
 
 
@@ -845,7 +786,7 @@ h1 {
   ========================= */
 
   .clock-window {
-    min-height: 120px;
+    height: 120px;
   }
 
 
@@ -854,7 +795,7 @@ h1 {
   ========================= */
 
   .counter-window {
-    min-height: 90px;
+    height: 120px;
   }
 
 
@@ -863,7 +804,7 @@ h1 {
   ========================= */
 
   .photo-window {
-    height: 300px !important;
+    height: 300px;
   }
 
   .photo-grid {
@@ -873,20 +814,20 @@ h1 {
 
 
   /* =========================
-     スマホ：日記
-  ========================= */
-
-  .diary-window {
-    height: 500px !important;
-  }
-
-
-  /* =========================
      スマホ：リンク集
   ========================= */
 
   .links-window {
-    min-height: 100px;
+    height: 110px;
+  }
+
+
+  /* =========================
+     スマホ：日記
+  ========================= */
+
+  .diary-window {
+    height: 500px;
   }
 
 
