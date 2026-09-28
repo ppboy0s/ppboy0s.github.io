@@ -32,11 +32,18 @@ async function loadComponents() {
       "components/clock.html"
     );
 
+    // カウンターを読み込む
+    await loadComponent(
+      "counter-component",
+      "components/counter.html"
+    );
+
     // HTMLを全部読み込んだ後に実行
     initWindows();
     initDiary();
     initPhoto();
     initClock();
+    initCounter();
 }
 
 loadComponents();
