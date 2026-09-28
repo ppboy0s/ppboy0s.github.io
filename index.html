@@ -35,7 +35,6 @@
       margin-left: auto;
       margin-right: auto;
       text-align: left;
-      position: relative;
     }
 
     .title-bar {
@@ -166,11 +165,6 @@
   <div class="window">
     <div class="title-bar">
       <span>リンク集</span>
-      <div class="title-buttons">
-        <div class="title-button">―</div>
-        <div class="title-button">□</div>
-        <div class="title-button">×</div>
-      </div>
     </div>
 
     <div class="window-content">
@@ -183,123 +177,45 @@
 
   <div class="window diary-window">
   <div class="title-bar">
-    <span>日記.txt - メモ帳</span>
-
-    <div class="title-buttons">
-      <div class="title-button">―</div>
-      <div class="title-button">□</div>
-      <div class="title-button">×</div>
-    </div>
+    <span>日記.txt</span>
   </div>
 
-  <div class="window-content diary-content">
-
+  <div class="window-content">
     <p class="diary-date">2026/09/28</p>
     <p>
       ホームページ作ったヨ！(^^)/<br>
+      <br>
+      作った（大嘘）本当はchatGPTにコードの生成と手順を出力させて公開に至っている。<br>
+      社会人時代に覚えた技術を活かして一から作りたかったが、技量も知識も枯れていた。本当は元々なかったのかもしれない。<br>
+      ゲームでもして現実逃避します<br>
+      ε=ε=(＃＞Д＜)ｺﾗｰε=ε=(*≧∇)ｷｬｰ<br>
     </p>
-
     <hr>
 
   </div>
+
+</div>
 </div>
 
 <footer class="footer">
   <p>Since 2026.09.28</p>
 </footer>
 
-<script>
-  let topZIndex = 1000;
+  <script>
+    document.querySelectorAll(".title-bar").forEach(titleBar => {
+      const buttons = document.createElement("div");
 
-  document.querySelectorAll(".window").forEach(windowEl => {
-    const titleBar = windowEl.querySelector(".title-bar");
+      buttons.className = "title-buttons";
 
-    let isDragging = false;
-    let offsetX = 0;
-    let offsetY = 0;
-    let placeholder = null;
-    let hasMoved = false;
+      buttons.innerHTML = `
+        <div class="title-button">―</div>
+        <div class="title-button">□</div>
+        <div class="title-button">×</div>
+      `;
 
-    titleBar.style.cursor = "move";
-
-    titleBar.addEventListener("mousedown", (e) => {
-
-      // 右上のボタンを押した時はドラッグしない
-      if (e.target.closest(".title-button")) {
-        return;
-      }
-
-      isDragging = true;
-
-      const rect = windowEl.getBoundingClientRect();
-
-      offsetX = e.clientX - rect.left;
-      offsetY = e.clientY - rect.top;
-
-      // 初めて動かす時だけ、
-      // 元いた場所に透明なスペースを残す
-      if (!hasMoved) {
-
-        placeholder = document.createElement("div");
-
-        placeholder.style.width = rect.width + "px";
-        placeholder.style.height = rect.height + "px";
-
-        const style = getComputedStyle(windowEl);
-
-        placeholder.style.marginTop = style.marginTop;
-        placeholder.style.marginBottom = style.marginBottom;
-        placeholder.style.marginLeft = style.marginLeft;
-        placeholder.style.marginRight = style.marginRight;
-
-        windowEl.parentNode.insertBefore(
-          placeholder,
-          windowEl
-        );
-
-        hasMoved = true;
-      }
-
-      // ページ上の現在位置を取得
-      windowEl.style.position = "absolute";
-
-      windowEl.style.left =
-        (rect.left + window.scrollX) + "px";
-
-      windowEl.style.top =
-        (rect.top + window.scrollY) + "px";
-
-      windowEl.style.margin = "0";
-
-      // 掴んだウィンドウを一番手前に
-      topZIndex++;
-
-      windowEl.style.zIndex = topZIndex;
+      titleBar.appendChild(buttons);
     });
-
-
-    document.addEventListener("mousemove", (e) => {
-
-      if (!isDragging) {
-        return;
-      }
-
-      windowEl.style.left =
-        (e.pageX - offsetX) + "px";
-
-      windowEl.style.top =
-        (e.pageY - offsetY) + "px";
-    });
-
-
-    document.addEventListener("mouseup", () => {
-
-      isDragging = false;
-
-    });
-
-  });
-</script>
+  </script>
 
 </body>
 
