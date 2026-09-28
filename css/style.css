@@ -78,7 +78,7 @@ h1 {
 .window {
   width: var(--window-width);
 
-  margin: 0 auto 20px auto;
+  margin: 0;
 
   background-color: var(--win-gray);
 
@@ -90,6 +90,26 @@ h1 {
   box-shadow: 1px 1px 0 var(--text-black);
 
   text-align: left;
+}
+
+.window-layout {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+
+  gap: 20px;
+}
+
+.left-column,
+.right-column {
+  width: 500px;
+}
+
+.left-column {
+  display: flex;
+  flex-direction: column;
+
+  gap: 20px;
 }
 
 
