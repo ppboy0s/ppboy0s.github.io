@@ -1,17 +1,12 @@
 function initPhoto() {
-
   const grid =
     document.getElementById("photo-grid");
-
   const modal =
     document.getElementById("photo-modal");
-
   const modalImage =
     document.getElementById("photo-modal-image");
-
   const modalTitle =
     document.getElementById("photo-modal-title");
-
   const modalCaption =
     document.getElementById("photo-modal-caption");
 
@@ -44,7 +39,6 @@ function initPhoto() {
   /* 暗い背景をクリックしても閉じる */
   modal.addEventListener("click", (event) => {
     if (event.target === modal) {
-
       modal.classList.remove("show");
     }
   });

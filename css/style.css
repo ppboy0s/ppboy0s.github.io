@@ -1,94 +1,69 @@
 /* =========================
    共通カラー・サイズ
 ========================= */
-
 :root {
   --win-gray: #c0c0c0;
   --win-blue: #000080;
   --win-blue-light: #1084d0;
-
   --win-white: #ffffff;
   --win-dark: #404040;
   --win-mid: #808080;
-
   --text-black: #000000;
   --text-purple: #800080;
   --text-gray: #666666;
   --text-gray-light: #555555;
-
   --window-width: 500px;
-
   --font-main:
     "MS PGothic",
     "ＭＳ Ｐゴシック",
     sans-serif;
 }
 
-
 /* =========================
    全体
 ========================= */
-
 body {
   background-color: var(--win-gray);
-
   font-family: var(--font-main);
   color: var(--text-black);
-
   text-align: center;
-
   padding: 20px;
   padding-bottom: 50px;
 }
 
 h1 {
   margin-bottom: 8px;
-
   font-family: var(--font-main);
   font-size: 36px;
   letter-spacing: 3px;
-
   color: var(--win-blue);
-
   text-align: center;
 }
-
 
 /* =========================
    サブタイトル
 ========================= */
-
 .subtitle {
   margin-top: 0;
   margin-bottom: 20px;
-
   color: var(--text-purple);
-
   font-size: 14px;
   font-weight: bold;
-
   text-align: center;
 }
-
 
 /* =========================
    共通ウィンドウ
 ========================= */
-
 .window {
   width: var(--window-width);
-
   margin: 0;
-
   background-color: var(--win-gray);
-
   border-top: 2px solid var(--win-white);
   border-left: 2px solid var(--win-white);
   border-right: 2px solid var(--win-dark);
   border-bottom: 2px solid var(--win-dark);
-
   box-shadow: 1px 1px 0 var(--text-black);
-
   text-align: left;
 }
 
@@ -96,7 +71,6 @@ h1 {
   display: flex;
   justify-content: center;
   align-items: flex-start;
-
   gap: 20px;
 }
 
@@ -108,41 +82,31 @@ h1 {
 .left-column {
   display: flex;
   flex-direction: column;
-
   gap: 20px;
 }
-
 
 /* =========================
    タイトルバー
 ========================= */
-
 .title-bar {
   display: flex;
-
   align-items: center;
   justify-content: space-between;
-
   padding: 3px 6px;
-
   background:
     linear-gradient(
       to right,
       var(--win-blue),
       var(--win-blue-light)
     );
-
   color: var(--win-white);
-
   font-size: 14px;
   font-weight: bold;
 }
 
-
 /* =========================
    タイトルバーのボタン
 ========================= */
-
 .title-buttons {
   display: flex;
   gap: 2px;
@@ -151,42 +115,30 @@ h1 {
 .title-button {
   width: 16px;
   height: 14px;
-
   background-color: var(--win-gray);
-
   border-top: 1px solid var(--win-white);
   border-left: 1px solid var(--win-white);
   border-right: 1px solid var(--win-dark);
   border-bottom: 1px solid var(--win-dark);
-
   color: var(--text-black);
-
   font-size: 10px;
   line-height: 12px;
-
   text-align: center;
 }
-
 
 /* =========================
    ウィンドウ内部
 ========================= */
-
 .window-content {
   padding: 12px;
-
   background-color: var(--win-white);
-
   border-top: 2px solid var(--win-mid);
-
   box-sizing: border-box;
-
   overflow: auto;
 }
 
 .window-content ul {
   margin: 0;
-
   padding-left: 20px;
 }
 
@@ -194,42 +146,31 @@ h1 {
   margin-bottom: 8px;
 }
 
-
 /* =========================
    流れる文字
 ========================= */
-
 .marquee-box {
   width: var(--window-width);
-
   margin: 0 auto 20px auto;
-
   padding: 4px;
-
   background-color: var(--win-white);
-
   border-top: 2px solid var(--win-mid);
   border-left: 2px solid var(--win-mid);
   border-right: 2px solid var(--win-white);
   border-bottom: 2px solid var(--win-white);
-
   box-sizing: border-box;
 }
-
 
 /* =========================
    リンク集
 ========================= */
-
 .links-window .window-content {
   max-height: 150px;
 }
 
-
 /* =========================
    日記
 ========================= */
-
 .diary-window .window-content {
   height: 500px;
   display: flex;
@@ -245,30 +186,22 @@ h1 {
 
 .diary-nav {
   flex-shrink: 0;
-
   display: flex;
   align-items: center;
   justify-content: space-between;
-
   gap: 10px;
-
   margin-top: 10px;
   padding-top: 8px;
-
   border-top: 1px solid var(--win-mid);
 }
-
 
 /* 日付 */
 .diary-date {
   margin-top: 0;
   margin-bottom: 4px;
-
   color: var(--win-blue);
-
   font-weight: bold;
 }
-
 
 /* 投稿 */
 .diary-post {
@@ -278,41 +211,31 @@ h1 {
 .diary-post p {
   margin-top: 0;
   margin-bottom: 10px;
-
   white-space: pre-line;
 }
 
 .diary-post-time {
   color: var(--text-gray);
-
   font-size: 12px;
 }
-
 
 /* 日記ページ送り */
 .diary-nav {
   display: flex;
-
   align-items: center;
   justify-content: space-between;
-
   gap: 10px;
-
   margin-top: 10px;
 }
 
 .diary-nav button {
   padding: 4px 10px;
-
   background-color: var(--win-gray);
-
   border-top: 2px solid var(--win-white);
   border-left: 2px solid var(--win-white);
   border-right: 2px solid var(--win-dark);
   border-bottom: 2px solid var(--win-dark);
-
   font-family: var(--font-main);
-
   cursor: pointer;
 }
 
@@ -323,14 +246,11 @@ h1 {
   border-bottom: 2px solid var(--win-white);
 }
 
-
 /* =========================
    写真ウィンドウ
 ========================= */
-
 .photo-window .window-content {
   height: 260px;
-
   overflow-y: auto;
 }
 
@@ -338,160 +258,112 @@ h1 {
   padding: 6px;
 }
 
-
 /* =========================
    写真サムネイル一覧
 ========================= */
-
 .photo-grid {
   display: grid;
-
   grid-template-columns: repeat(5, 1fr);
-
   gap: 4px;
 }
 
 .photo-thumb {
   aspect-ratio: 1 / 1;
-
   overflow: hidden;
-
   border: 1px solid var(--win-mid);
-
   box-sizing: border-box;
-
   cursor: pointer;
 }
 
 .photo-thumb img {
   display: block;
-
   width: 100%;
   height: 100%;
-
   object-fit: cover;
 }
-
 
 /* =========================
    写真モーダル
 ========================= */
-
 .photo-modal {
   display: none;
-
   position: fixed;
-
   top: 0;
   left: 0;
-
   width: 100vw;
   height: 100vh;
-
   background-color:
     rgba(0, 0, 0, 0.7);
-
   align-items: center;
   justify-content: center;
-
   z-index: 10000;
 }
-
 
 /* モーダル表示時 */
 .photo-modal.show {
   display: flex;
 }
 
-
 /* モーダル本体 */
 .photo-modal-box {
   position: relative;
-
   max-width: 80vw;
   max-height: 85vh;
-
   padding: 10px;
-
   background-color: var(--win-gray);
-
   border-top: 2px solid var(--win-white);
   border-left: 2px solid var(--win-white);
   border-right: 2px solid var(--win-dark);
   border-bottom: 2px solid var(--win-dark);
-
   box-shadow: 2px 2px 0 var(--text-black);
-
   text-align: center;
 }
-
 
 /* 拡大写真 */
 .photo-modal-box img {
   display: block;
-
   max-width: 75vw;
   max-height: 70vh;
-
   width: auto;
   height: auto;
-
   margin: 0 auto;
-
   object-fit: contain;
 }
-
 
 /* 写真タイトル */
 .photo-title {
   margin: 8px 0 0 0;
-
   color: var(--win-blue);
-
   font-size: 13px;
   font-weight: bold;
 }
 
-
 /* 写真説明 */
 .photo-caption {
   margin: 4px 0 0 0;
-
   color: var(--text-gray-light);
-
   font-size: 12px;
 }
-
 
 /* =========================
    フッター
 ========================= */
-
 .footer {
   position: fixed;
-
   left: 0;
   bottom: 0;
-
   width: 100%;
-
   padding: 8px 0;
-
   background-color: var(--win-gray);
-
   color: var(--win-dark);
-
   font-size: 12px;
-
   text-align: center;
-
   z-index: 9999;
 }
 
 /* =========================
    スマホ表示
 ========================= */
-
 @media (max-width: 700px) {
 
     body {
@@ -499,48 +371,34 @@ h1 {
     padding-bottom: 90px;
     }
 
-
     h1 {
     font-size: 24px;
     }
 
-
     .window-layout {
     display: flex;
-
     flex-direction: column;
-
     align-items: center;
-
     gap: 20px;
-
     width: 100%;
     }
-
 
     .left-column,
     .right-column {
     width: 100%;
     }
 
-
     .window {
     width: 100%;
-
     max-width: 500px;
-
     box-sizing: border-box;
     }
-
 
     .marquee-box {
     width: 100%;
-
     max-width: 500px;
-
     box-sizing: border-box;
     }
-
 
     .photo-grid {
     grid-template-columns:
