@@ -3,15 +3,24 @@
 
 <head>
   <meta charset="UTF-8">
+
   <meta
     name="viewport"
     content="width=device-width, initial-scale=1.0"
   >
+
   <title>ぽぽのホームページ</title>
+
   <link rel="stylesheet" href="css/style.css">
 </head>
 
+
 <body>
+
+  <!-- =========================
+       ページタイトル
+  ========================== -->
+
   <h1>
     ★★ ぽぽのホームページ ★★
   </h1>
@@ -20,49 +29,112 @@
     ~popo's homepage~
   </p>
 
-  <!-- ===== 流れる文字 ===== -->
+
+  <!-- =========================
+       流れる文字
+  ========================== -->
+
   <div class="marquee-box">
     <marquee scrollamount="4">
       ★★ ゆっくりしていってね！(*‘ω‘ *) (*‘ω‘ *)★★
     </marquee>
   </div>
-  <!-- ===== ウィンドウ ===== -->
-  <div class="window-layout">
-    <div class="left-column">
-      <div id="clock-component"></div>
-      <div id="photo-component"></div>
-      <div id="links-component"></div>
-    </div>
-    <div class="right-column">
-      <div id="counter-component"></div>
-      <div id="diary-component"></div>
-    </div>
-  </div>
 
-  <!-- ===== フッター ===== -->
+
+  <!-- =========================
+       ウィンドウ配置
+
+       PCでは
+
+       時計      カウンター
+       写真      日記
+       リンク    日記
+
+       の配置になる
+  ========================== -->
+
+  <main class="dashboard">
+
+    <!-- 左上：時計 -->
+    <div
+      id="clock-component"
+      class="slot slot-clock">
+    </div>
+
+
+    <!-- 右上：アクセスカウンター -->
+    <div
+      id="counter-component"
+      class="slot slot-counter">
+    </div>
+
+
+    <!-- 左中央：写真 -->
+    <div
+      id="photo-component"
+      class="slot slot-photo">
+    </div>
+
+
+    <!-- 右中央～下：日記 -->
+    <div
+      id="diary-component"
+      class="slot slot-diary">
+    </div>
+
+
+    <!-- 左下：リンク集 -->
+    <div
+      id="links-component"
+      class="slot slot-links">
+    </div>
+
+  </main>
+
+
+  <!-- =========================
+       フッター
+  ========================== -->
+
   <footer class="footer">
     <p>Since 2026.09.28</p>
   </footer>
 
-  <!-- ===== データ ===== -->
+
+  <!-- =========================
+       データ
+  ========================== -->
+
   <script src="data/diary-data.js"></script>
   <script src="data/photo-data.js"></script>
 
-  <!-- ===== JavaScript ===== -->
+
+  <!-- =========================
+       JavaScript
+  ========================== -->
+
   <script src="js/window.js"></script>
   <script src="js/diary.js"></script>
   <script src="js/photo.js"></script>
   <script src="js/clock.js"></script>
   <script src="js/counter.js"></script>
 
-  <!-- 最後に読み込む -->
+
+  <!-- コンポーネントは最後に読み込む -->
   <script src="js/components.js"></script>
+
+
+  <!-- =========================
+       GoatCounter
+  ========================== -->
 
   <script
     data-goatcounter="https://ppboy.goatcounter.com/count"
+    data-goatcounter-settings='{"allow_local": true}'
     async
     src="//gc.zgo.at/count.js">
   </script>
+
 </body>
 
 </html>
