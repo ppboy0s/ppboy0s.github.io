@@ -3,9 +3,15 @@ function initCounter() {
     document.getElementById("visitor-count");
 
   fetch(
-    "https://ppboy.goatcounter.com/counter/%2F.json"
+    "https://ppboy.goatcounter.com/counter//.json"
   )
-    .then(response => response.json())
+    .then(response => {
+      if (!response.ok) {
+        throw new Error("カウンター取得失敗");
+      }
+
+      return response.json();
+    })
     .then(data => {
       const count =
         String(data.count).replace(/,/g, "");
