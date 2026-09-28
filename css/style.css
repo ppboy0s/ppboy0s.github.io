@@ -1,0 +1,168 @@
+body {
+    background-color: #c0c0c0;
+    font-family: "MS PGothic", "ＭＳ Ｐゴシック", sans-serif;
+    padding: 20px;
+    color: black;
+    text-align: center;
+    padding-bottom: 50px;
+}
+
+h1 {
+    font-size: 36px;
+    font-family: "MS PGothic", "ＭＳ Ｐゴシック", sans-serif;
+    color: #000080;
+    text-align: center;
+    letter-spacing: 3px;
+    margin-bottom: 8px;
+}
+
+/* ウィンドウの見た目 */
+.window {
+    width: 320px;
+    background-color: #c0c0c0;
+    border-top: 2px solid #ffffff;
+    border-left: 2px solid #ffffff;
+    border-right: 2px solid #404040;
+    border-bottom: 2px solid #404040;
+    box-shadow: 1px 1px 0 #000000;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+}
+
+/* ウィンドウのタイトルの見た目 */
+.title-bar {
+    background: linear-gradient(to right, #000080, #1084d0);
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+    padding: 3px 6px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* ウィンドウのボタンの見た目 */
+.title-buttons {
+    display: flex;
+    gap: 2px;
+}
+.title-button {
+    width: 16px;
+    height: 14px;
+    background-color: #c0c0c0;
+    border-top: 1px solid #ffffff;
+    border-left: 1px solid #ffffff;
+    border-right: 1px solid #404040;
+    border-bottom: 1px solid #404040;
+    font-size: 10px;
+    line-height: 12px;
+    text-align: center;
+    color: black;
+}
+
+/* ウィンドウ内の見た目 */
+.window-content {
+    padding: 12px;
+    background-color: #ffffff;
+    border-top: 2px solid #808080;
+}
+.window-content ul {
+    margin: 0;
+    padding-left: 20px;
+}
+.window-content li {
+    margin-bottom: 8px;
+}
+
+/* サブタイトル見た目 */
+.subtitle {
+    text-align: center;
+    color: #800080;
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+/* 日記ウィンドウ */
+.diary-window {
+    width: 500px;
+    margin-top: 20px;
+}
+/* 日記日付 */
+.diary-date {
+    font-weight: bold;
+    color: #000080;
+    margin-bottom: 5px;
+    margin-top: 0;
+    margin-bottom: 4px;
+}
+
+/* なんか流れるやつ */
+.marquee-box {
+    width: 500px;
+    background-color: #ffffff;
+    border-top: 2px solid #808080;
+    border-left: 2px solid #808080;
+    border-right: 2px solid #ffffff;
+    border-bottom: 2px solid #ffffff;
+    padding: 4px;
+    margin: 0 auto 20px auto;
+}
+
+/* フッターの見た目 */
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+
+    text-align: center;
+    font-size: 12px;
+    color: #404040;
+
+    padding: 8px 0;
+    background-color: #c0c0c0;
+
+    z-index: 9999;
+}
+
+/* 日記の見た目 */
+.diary-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+.diary-nav button {
+    font-family: "MS PGothic", "ＭＳ Ｐゴシック", sans-serif;
+    background-color: #c0c0c0;
+
+    border-top: 2px solid #ffffff;
+    border-left: 2px solid #ffffff;
+    border-right: 2px solid #404040;
+    border-bottom: 2px solid #404040;
+
+    padding: 4px 10px;
+    cursor: pointer;
+}
+.diary-nav button:active {
+    border-top: 2px solid #404040;
+    border-left: 2px solid #404040;
+    border-right: 2px solid #ffffff;
+    border-bottom: 2px solid #ffffff;
+}
+.diary-post {
+    margin-bottom: 18px;
+}
+.diary-post p {
+    margin-top: 0;
+    margin-bottom: 10px;
+    white-space: pre-line;
+}
+.diary-post-time {
+    font-size: 12px;
+    color: #666666;
+}
