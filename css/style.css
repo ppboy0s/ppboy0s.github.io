@@ -429,21 +429,25 @@ h1 {
 /* =========================
    日記投稿
 ========================= */
-.diary-post {
-  margin-bottom: 18px;
-}
-
-.diary-post p {
-  margin-top: 0;
-  margin-bottom: 10px;
-
-  white-space: pre-line;
+.diary-post-title {
+  margin-bottom: 1px;
+  color: #800080;
+  font-weight: bold;
 }
 
 .diary-post-time {
+  margin-bottom: 2px;
   color: var(--text-gray);
-
   font-size: 12px;
+}
+
+.diary-post p {
+  margin: 0;
+  white-space: pre-line;
+}
+
+.diary-post {
+  margin-bottom: 18px;
 }
 
 /* =========================

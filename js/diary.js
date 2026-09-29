@@ -22,13 +22,17 @@ function initDiary() {
       diaryArea.innerHTML += `
         <div class="diary-post">
 
+          ${
+            post.title
+              ? `<div class="diary-post-title">${post.title}</div>`
+              : ""
+          }
+
           <div class="diary-post-time">
             ${post.time}
           </div>
 
-          <p>
-            ${post.text}
-          </p>
+          <p>${post.text}</p>
 
         </div>
       `;
@@ -36,6 +40,7 @@ function initDiary() {
 
     prevButton.disabled =
       currentDiaryIndex === 0;
+
     nextButton.disabled =
       currentDiaryIndex === diaryDates.length - 1;
   }
