@@ -38,12 +38,19 @@ async function loadComponents() {
       "components/counter.html"
     );
 
+    // キャンドルを読み込む
+    await loadComponent(
+      "candle-component",
+      "components/candle.html"
+    );
+    
     // HTMLを全部読み込んだ後に実行
     initWindows();
     initDiary();
     initPhoto();
     initClock();
     initCounter();
+    initCandle();
 }
 
 loadComponents();
