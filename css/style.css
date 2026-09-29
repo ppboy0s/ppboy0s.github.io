@@ -88,8 +88,7 @@ h1 {
   border-left: 2px solid var(--win-white);
   border-right: 2px solid var(--win-dark);
   border-bottom: 2px solid var(--win-dark);
-  box-shadow:
-    1px 1px 0 var(--text-black);
+  box-shadow: 1px 1px 0 var(--text-black);
   box-sizing: border-box;
   text-align: left;
 }

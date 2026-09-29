@@ -3,87 +3,63 @@
 
 <head>
   <meta charset="UTF-8">
-
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  >
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ぽぽのホームページ</title>
-
   <link rel="stylesheet" href="css/style.css">
 </head>
 
-
 <body>
 
-  <!-- =========================
-       ページタイトル
-  ========================== -->
+  <table align="center" cellspacing="20">
 
-  <h1>
-    ★★ ぽぽのホームページ ★★
-  </h1>
+    <!-- タイトルまわり -->
+    <tr>
+      <td colspan="2" align="center">
+        <h1>★★ ぽぽのホームページ ★★</h1>
+        <p class="subtitle">~popo's homepage~</p>
 
-  <p class="subtitle">
-    ~popo's homepage~
-  </p>
+        <div class="marquee-box">
+          <marquee scrollamount="4">
+            ★★ ゆっくりしていってね！(*‘ω‘ *) (*‘ω‘ *)★★
+          </marquee>
+        </div>
+      </td>
+    </tr>
 
+    <!-- メイン部分 -->
+    <tr>
 
-  <!-- =========================
-       流れる文字
-  ========================== -->
+      <!-- 左側 -->
+      <td valign="top">
+        <div id="clock-component"></div>
+        <br>
+        <div id="photo-component"></div>
+        <br>
+        <div id="links-component"></div>
+      </td>
 
-  <div class="marquee-box">
-    <marquee scrollamount="4">
-      ★★ ゆっくりしていってね！(*‘ω‘ *) (*‘ω‘ *)★★
-    </marquee>
-  </div>
+      <!-- 右側 -->
+      <td valign="top">
+        <div id="counter-component"></div>
+        <br>
+        <div id="diary-component"></div>
+        <div id="candle-component"></div>
+      </td>
 
+    </tr>
 
-<table align="center" cellspacing="20">
-  <tr>
+  </table>
 
-    <td valign="top">
-      <div id="clock-component"></div>
-      <br>
-      <div id="photo-component"></div>
-      <br>
-      <div id="links-component"></div>
-    </td>
-
-    <td valign="top">
-      <div id="counter-component"></div>
-      <br>
-      <div id="diary-component"></div>
-      <div id="candle-component"></div>
-    </td>
-
-  </tr>
-</table>
-
-
-  <!-- =========================
-       フッター
-  ========================== -->
-
+  <!-- フッター -->
   <footer class="footer">
     <p>Since 2026.09.28</p>
   </footer>
 
-
-  <!-- =========================
-       データ
-  ========================== -->
-
+  <!-- データ -->
   <script src="data/diary-data.js"></script>
   <script src="data/photo-data.js"></script>
 
-
-  <!-- =========================
-       JavaScript
-  ========================== -->
-
+  <!-- JavaScript -->
   <script src="js/window.js"></script>
   <script src="js/diary.js"></script>
   <script src="js/photo.js"></script>
@@ -94,11 +70,7 @@
   <!-- コンポーネントは最後に読み込む -->
   <script src="js/components.js"></script>
 
-
-  <!-- =========================
-       GoatCounter
-  ========================== -->
-
+  <!-- GoatCounter -->
   <script
     data-goatcounter="https://ppboy.goatcounter.com/count"
     data-goatcounter-settings='{"allow_local": true}'
@@ -107,5 +79,4 @@
   </script>
 
 </body>
-
 </html>
