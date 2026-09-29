@@ -368,35 +368,37 @@ h1 {
     letter-spacing: 1px;
   }
 
-  .marquee-box,
-  .window {
-    width: 100%;
-    max-width: var(--window-width);
-  }
-
-  /* tableを1列表示にする */
-  table,
-  tbody,
-  tr,
-  td {
-    display: block;
-    width: 100%;
+  /* tableを完全に1列化 */
+  body > table,
+  body > table > tbody,
+  body > table > tbody > tr,
+  body > table > tbody > tr > td {
+    display: block !important;
+    width: 100% !important;
     box-sizing: border-box;
   }
 
-  table {
-    border-spacing: 0;
+  body > table {
+    border-spacing: 0 !important;
   }
 
-  td {
-    padding: 0;
+  body > table > tbody > tr > td {
+    padding: 0 !important;
   }
 
-  td + td {
+  body > table > tbody > tr > td + td {
     margin-top: 20px;
   }
 
-  .window {
+  .marquee-box,
+  .window,
+  .clock-window,
+  .counter-window,
+  .photo-window,
+  .links-window,
+  .diary-window {
+    width: 100% !important;
+    max-width: 500px;
     margin-left: auto;
     margin-right: auto;
   }
