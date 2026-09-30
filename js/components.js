@@ -43,12 +43,6 @@ async function loadComponents() {
       "candle-component",
       "components/candle.html"
     );
-
-    // 月を読み込む
-    await loadComponent(
-      "moon-component",
-      "components/moon.html"
-    );
     
     // HTMLを全部読み込んだ後に実行
     initWindows();

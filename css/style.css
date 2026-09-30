@@ -343,18 +343,6 @@ h1 {
   cursor: pointer;
 }
 
-/* 月 */
-.moon {
-  position: fixed;
-  display: none;
-  top: 50px;
-  right: 50px;
-  width: 100px;
-  height: auto;
-  cursor: pointer;
-  object-fit: contain;
-}
-
 /* フッター */
 .footer {
   position: fixed;
