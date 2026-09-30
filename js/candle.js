@@ -1,5 +1,6 @@
 function initCandle() {
   const candle = document.getElementById("candle");
+  const moon = document.querySelector(".moon");
   const footer = document.querySelector(".footer");
 
   let isDark = false;
@@ -11,5 +12,7 @@ function initCandle() {
 
     document.body.style.backgroundColor = color;
     footer.style.backgroundColor = color;
+
+    moon.style.display = isDark ? "block" : "none";
   });
 }
